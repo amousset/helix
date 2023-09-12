@@ -122,7 +122,7 @@ impl Default for AutoPairs {
 #[must_use]
 pub fn hook(doc: &Rope, selection: &Selection, ch: char, pairs: &AutoPairs) -> Option<Transaction> {
     log::trace!("autopairs hook selection: {:#?}", selection);
-
+"\t"
     if let Some(pair) = pairs.get(ch) {
         if pair.same() {
             return Some(handle_same(doc, selection, pair));
